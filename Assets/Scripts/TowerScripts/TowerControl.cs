@@ -10,6 +10,7 @@ public class TowerControl : MonoBehaviour
     private GameObject model;
     private Rigidbody rb;
     private int health;
+    private float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +24,23 @@ public class TowerControl : MonoBehaviour
         
     }
 
-    public void Attack() {
-        
+    public virtual void Attack() {
+
     }
 
     void Death() {
         Destroy(this.gameObject);
+    }
+
+    public int GetDamage() {
+        return damage;
+    }
+
+    public float GetSpeed() {
+        return speed;
+    }
+
+    public void SetSpeed(float speed) {
+        this.speed = speed;
     }
 }
