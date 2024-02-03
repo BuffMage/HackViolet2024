@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour
 
     protected float speed {get; set;}
 
-    private int strength;
-    private float attackSpeed;
+    protected int strength {get; set;}
+    protected float attackSpeed {get; set;}
 
     private Vector3 moveDirection = Vector3.left;
 
@@ -37,9 +37,18 @@ public class Enemy : MonoBehaviour
         this.transform.position += moveDirection * Time.deltaTime * speed;
     }
 
-    public void Attack()
+    protected void Attack()
     {
-        
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, Vector3.left, out hit, 10f, hitMask)) {
+            // Will do more stuff later
+            Debug.Log("Did-Hit");
+
+
+            hit.transform.gameObject.GetComponent<TowerControl>().Damage(strength);
+
+        }
     }
 
     // Start is called before the first frame update
@@ -57,8 +66,6 @@ public class Enemy : MonoBehaviour
         {
             Move();
         }
-     
-
         
     }
 
@@ -87,6 +94,8 @@ public class Enemy : MonoBehaviour
         {
             isAttacking = true;
         }
+
+        Debug.Log("AHHHHHHHHH");
     }
 
     void OnCollisionExit(Collision collision)

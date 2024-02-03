@@ -48,6 +48,17 @@ public class TowerControl : MonoBehaviour
         this.speed = speed;
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    //Only used for initialization purposes sonnnn
+    public void SetHealth(int health)
+    {
+        this.health = health;
+    }
+
     public void Damage(int amount) {
         health -= amount;
 

@@ -9,6 +9,7 @@ public class SolarTower : TowerControl
     {
         SetSpeed(3);
         SetDamage(12);
+        SetHealth(20);
         StartCoroutine(AttackCycle());
     }
 
