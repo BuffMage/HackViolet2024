@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 1573428110}
   - component: {fileID: 1573428109}
   - component: {fileID: 1573428108}
+  - component: {fileID: 1573428112}
   m_Layer: 0
   m_Name: Pointer
   m_TagString: Untagged
@@ -159,7 +160,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -223,11 +224,25 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.691803, y: -10.293848, z: 6.710763}
-  m_LocalScale: {x: 1, y: 6.7244, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 3.3622, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1573428112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573428107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64dc3ab9dad0cec4cb4c9b0dc69c120c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pValue: 100
+  currVelDamp: 10
 --- !u!1 &1840305001
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +305,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -314,13 +329,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840305001}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24996565, y: -0.25000206, z: 0.06697797, w: 0.9330221}
-  m_LocalPosition: {x: 9.17, y: 5.88, z: -10}
+  m_LocalRotation: {x: 0.2585728, y: 0.04213311, z: -0.011289535, w: 0.96500653}
+  m_LocalPosition: {x: -4.64, y: 5.88, z: -8.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 29.996, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 5, z: 0}
 --- !u!114 &1840305005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,7 +538,7 @@ Transform:
   m_GameObject: {fileID: 2054107213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1289902, y: -1.2174509, z: -7.8360653}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

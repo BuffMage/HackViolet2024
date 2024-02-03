@@ -14,9 +14,9 @@ public class LevelBuilder : MonoBehaviour
         {
             for (int j = 0; j < levelDims.y; j++)
             {
-                GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                newCube.transform.position = new Vector3(i * tileSize - (levelDims.x * tileSize / 2), 0, j * tileSize - (levelDims.y * tileSize / 2));
-                //newCube.transform.localScale = Vector3.one * tileSize;
+                GameObject newCube = GameObject.CreatePrimitive(PrimitiveType.Plane);
+                newCube.transform.position = new Vector3(i * tileSize * 2 - (levelDims.x * tileSize / 2), 0, j * tileSize * 2 - (levelDims.y * tileSize / 2));
+                newCube.transform.localScale = Vector3.one * tileSize / 5;
                 //newCube.GetComponent<MeshRenderer>().enabled = false;
                 newCube.transform.SetParent(gameObject.transform);
                 newCube.AddComponent<BuildingTile>().SetCoords(new Vector2Int(i, j));
