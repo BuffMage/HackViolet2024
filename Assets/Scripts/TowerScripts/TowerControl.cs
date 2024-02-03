@@ -59,6 +59,14 @@ public class TowerControl : MonoBehaviour
         this.health = health;
     }
 
+    public int GetCost() {
+        return cost;
+    }
+
+    public void SetCost(int cost) {
+        this.cost = cost;
+    }
+
     public void Damage(int amount) {
         health -= amount;
 
