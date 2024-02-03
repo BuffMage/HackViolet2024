@@ -12,10 +12,15 @@ public class Enemy : MonoBehaviour
     private float speed = 1.5f;
 
     private int strength;
+    private float attackSpeed;
 
     private Vector3 moveDirection = Vector3.left;
 
     private Rigidbody rb;
+
+    private int hitMask = 1 << 7;
+
+    private bool isAttacking = false;
 
     public int GetHealth()
     {
@@ -37,7 +42,7 @@ public class Enemy : MonoBehaviour
         this.transform.position += moveDirection * Time.deltaTime * speed;
     }
 
-    public void attack()
+    public void Attack()
     {
         
     }
@@ -45,19 +50,54 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        StartCoroutine("attackCycle");
+        
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Move();
+        if(!isAttacking)
+        {
+            Move();
+        }
+     
+
+        
     }
 
+    //need a coroutine for attacking interval
+    private IEnumerator attackCycle()
+    {
+        while(isAttacking)
+        {
+            Attack();
+            yield return new WaitForSeconds(attackSpeed);
+        }
+
+        //Unneccesary??
+        yield return 0;
+        
+    }
 
     void Death()
     {
         Destroy(this.gameObject);
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == 7)
+        {
+            isAttacking = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        isAttacking = false;
+    }
+   
 
 }
