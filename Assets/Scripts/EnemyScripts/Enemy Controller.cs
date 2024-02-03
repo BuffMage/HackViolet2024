@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private int health;
+    private int health = 10;
     private GameObject model;
 
     private float speed = 1.5f;
@@ -25,6 +25,11 @@ public class Enemy : MonoBehaviour
     public void Damage(int amount)
     {
         health -= amount;
+
+        if(health <= 0)
+        {
+            Death();
+        }
     }
 
     public void Move()
