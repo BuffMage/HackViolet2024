@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private int health = 10;
-    private GameObject model;
+    protected int health {get; set;}
+    public GameObject model;
 
-    private float speed = 1.5f;
+    protected float speed {get; set;}
 
     private int strength;
     private float attackSpeed;
@@ -21,11 +21,6 @@ public class Enemy : MonoBehaviour
     private int hitMask = 1 << 7;
 
     private bool isAttacking = false;
-
-    public int GetHealth()
-    {
-        return health;
-    }
 
     public void Damage(int amount)
     {
