@@ -7,7 +7,7 @@ public class TowerControl : MonoBehaviour
 {
     private int cost;
     private int damage;
-    private GameObject model;
+    public GameObject model;
     private Rigidbody rb;
     private int health;
     private float speed;
@@ -36,11 +36,23 @@ public class TowerControl : MonoBehaviour
         return damage;
     }
 
+    public void SetDamage(int damage) {
+        this.damage = damage;
+    }
+
     public float GetSpeed() {
         return speed;
     }
 
     public void SetSpeed(float speed) {
         this.speed = speed;
+    }
+
+    public void Damage(int amount) {
+        health -= amount;
+
+        if (health <= 0) {
+            Death();
+        }
     }
 }

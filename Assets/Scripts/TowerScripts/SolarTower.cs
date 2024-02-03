@@ -8,6 +8,7 @@ public class SolarTower : TowerControl
     void Start()
     {
         SetSpeed(3);
+        SetDamage(12);
         StartCoroutine(AttackCycle());
     }
 
