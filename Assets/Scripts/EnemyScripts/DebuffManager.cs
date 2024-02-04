@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class DebuffManager : MonoBehaviour
 {
-    //REDO THIS SONNNNNNNNN
-    //Make the dicitonary itself ambiguous, then
-    //figure it out from there
+    
     private Dictionary<TowerControl, float> affectedTowers;
     
     // Start is called before the first frame update

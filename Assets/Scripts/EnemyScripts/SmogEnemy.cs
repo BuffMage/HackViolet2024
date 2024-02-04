@@ -53,13 +53,14 @@ public class SmogEnemy : Enemy
             }
         }
 
-        if(transform.position.x <= 0)
+        //Kills the enemy, damages the player
+        if(transform.position.x <= -9.5f)
         {
             FindAnyObjectByType<PlayerController>().Damage(strength);
             Death();
         }
 
-         if(!isAttacking && !isPhasing)
+        if(!isAttacking && !isPhasing)
         {
             
             Move();

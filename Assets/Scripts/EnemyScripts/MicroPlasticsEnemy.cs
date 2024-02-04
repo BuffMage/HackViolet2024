@@ -8,7 +8,7 @@ public class MicroPlasticsEnemy : Enemy
     void Start()
     {
         health = 5;
-        speed = 2.0f;
+        speed = 2.5f;
         attackSpeed = 1f;
         strength = 1;
     }

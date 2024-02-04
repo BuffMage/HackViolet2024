@@ -80,7 +80,6 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         StartCoroutine("attackCycle");
-        Debug.Log("YEssir");
         rb = GetComponent<Rigidbody>();
     }
 
@@ -93,7 +92,7 @@ public class Enemy : MonoBehaviour
         }
         
         //Kills the enemy, damages the player
-        if(transform.position.x <= -10)
+        if(transform.position.x <= -9.5f)
         {
             FindAnyObjectByType<PlayerController>().Damage(strength);
             Death();
@@ -134,10 +133,6 @@ public class Enemy : MonoBehaviour
             Debug.Log("Found Tower");
             target = collision.collider;
         }
-
-        
-
-        Debug.Log("AHHHHHHHHH");
     }
 
     void OnCollisionExit(Collision collision)
