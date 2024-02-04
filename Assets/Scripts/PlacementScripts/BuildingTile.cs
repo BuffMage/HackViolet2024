@@ -6,30 +6,27 @@ public class BuildingTile : MonoBehaviour
 {
 
     private Vector2Int coords;
-    private GameObject pointerObj;
+    private GameObject currentBuilding;
 
     public void SetCoords(Vector2Int coords)
     {
         this.coords = coords;
     }
 
-    private void OnMouseOver() 
+    public bool PlaceBuilding(GameObject building)
     {
-        if (pointerObj == null) pointerObj = GameObject.Find("Pointer");
-        Debug.Log($"Mouse over cube: {coords}");
-        pointerObj.GetComponent<PointerManager>().SetTargetPos(transform.position);
+        if (currentBuilding != null) return false;
+        GameObject newObj = Instantiate(ItemPlacement.Instance.GetBuilding(), gameObject.transform.position, Quaternion.identity);
+        //newObj.transform.localScale = Vector3.one * .5f;
+        currentBuilding = newObj;
+        Debug.Log($"Placed {currentBuilding.name}!");
+        return true;
     }
 
-    private void OnMouseExit()
+    public void RemoveBuilding()
     {
-
-    }
-
-    private void OnMouseDown() 
-    {
-        GameObject newObj = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        newObj.transform.position = gameObject.transform.position;
-        newObj.transform.localScale = Vector3.one * .5f;
-        Debug.Log("Placed Building!");
+        if (currentBuilding == null) return;
+        Debug.Log($"Destroyed {currentBuilding.name}!");
+        Destroy(currentBuilding);
     }
 }

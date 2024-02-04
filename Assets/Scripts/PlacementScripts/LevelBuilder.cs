@@ -7,6 +7,9 @@ public class LevelBuilder : MonoBehaviour
     public float tileSize = 1f;
     public Vector2Int levelDims = new Vector2Int(30, 10);
 
+    public Material mat1;
+    public Material mat2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,8 @@ public class LevelBuilder : MonoBehaviour
                 newCube.transform.localScale = Vector3.one * tileSize / 5;
                 //newCube.GetComponent<MeshRenderer>().enabled = false;
                 newCube.transform.SetParent(gameObject.transform);
+                newCube.layer = LayerMask.NameToLayer("BuildingTiles");
+                newCube.GetComponent<MeshRenderer>().material = ((i + j) % 2 == 0) ? mat1: mat2;
                 newCube.AddComponent<BuildingTile>().SetCoords(new Vector2Int(i, j));
             }
         }
