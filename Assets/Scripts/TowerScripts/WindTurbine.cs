@@ -24,7 +24,8 @@ public class WindTurbine : TowerControl
         }
     }
 
-    public void PushEnemyBack() {
+    public void PushEnemyBack() 
+    {
         RaycastHit[] hits;
         hits = Physics.RaycastAll(transform.position, transform.right, 100.0F, 1 << 6);
         Debug.DrawRay(transform.position, transform.right, Color.red, 3f);
@@ -54,17 +55,19 @@ public class WindTurbine : TowerControl
 
     public override void Attack() 
     {
-        
+        FindObjectOfType<ItemPlacement>().ChangeMoney(50);
     }
 
-    private IEnumerator AttackCycle() {
+    private IEnumerator AttackCycle() 
+    {
         while (true) {
             Attack();
             yield return new WaitForSeconds(GetSpeed());
         }
     }
 
-    private IEnumerator Cooldown() {
+    private IEnumerator Cooldown() 
+    {
         yield return new WaitForSeconds(cooldown);
         canCooldown = true;
     }

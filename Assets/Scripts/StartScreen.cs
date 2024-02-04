@@ -14,4 +14,14 @@ public class StartScreen : MonoBehaviour
     {
         SceneManager.LoadScene("JamesScene");
     }
+
+    public void CreditScene() 
+    {
+        SceneManager.LoadScene("CreditScene");
+    }
+
+    public void LoadStartScreen() 
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
 }
