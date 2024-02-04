@@ -35,8 +35,8 @@ public class ItemPlacement : MonoBehaviour
             pointer.SetTargetPos(hit.collider.transform.position);
             if (Input.GetMouseButtonDown(0))
             {
-                //int buildingCost = GetBuilding().GetComponent<TowerControl>().GetCost();
-                int buildingCost = 0;
+                int buildingCost = GetBuilding().GetComponent<TowerControl>().GetCost();
+                //int buildingCost = 0;
                 if (buildingCost <= totalMoney)
                 {
                     if (hit.collider.GetComponent<BuildingTile>().PlaceBuilding(GetBuilding()))
