@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 5ece3831a55370b45be95554f86c42f8
+  - enabled: 1
+    path: Assets/Scenes/JamesScene.unity
+    guid: f910638371b9ea34e93494f73305f051
+  - enabled: 1
+    path: Assets/Scenes/NickScene.unity
+    guid: 7dc2aba25f167354c96a713a0fc9b622
+  - enabled: 1
+    path: Assets/Scenes/LoseScreen.unity
+    guid: b46f996e2070e69479d91dc0ab1d3485
   m_configObjects: {}

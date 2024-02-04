@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class StartScreen : MonoBehaviour
 {
-    public void EndGame() {
+    public void EndGame() 
+    {
         Application.Quit();
     }
 
-    public void StartGame() {
-        SceneManager.LoadScene("Placeholder");
+    public void StartGame() 
+    {
+        SceneManager.LoadScene("JamesScene");
     }
 }

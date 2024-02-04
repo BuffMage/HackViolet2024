@@ -14,6 +14,7 @@ public class DebuffManager : MonoBehaviour
     void Start()
     {
         affectedTowers = new Dictionary<TowerControl, float>();
+        StartCoroutine(DebuffCycle());
     }
 
     // Update is called once per frame
@@ -29,13 +30,19 @@ public class DebuffManager : MonoBehaviour
         Debug.Log("DEBUFF APPLIED");
         if(Target.GetComponent<TowerControl>() != null)
         {
-
+            Debug.Log("APPLY TO TOWER");
             TowerControl te = Target.GetComponent<TowerControl>();
             if(affectedTowers.ContainsKey(te))
             {
-                Debug.Log("Tower Found!");
+                Debug.Log("Resetting Debuff");
                 
-                affectedTowers[Target.GetComponent<TowerControl>()] = time;
+                affectedTowers[te] = time;
+            }
+            else
+            {
+                Debug.Log("Adding Tower to Thing!");
+                affectedTowers.Add(te, time);
+                StartDebuff(te);
             }
         }
         else if(Target.GetComponent<Enemy>() != null)
@@ -82,6 +89,7 @@ public class DebuffManager : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(1f);
+            Debug.Log("Debuffing");
         }
     }
 

@@ -53,6 +53,12 @@ public class SmogEnemy : Enemy
             }
         }
 
+        if(transform.position.x <= 0)
+        {
+            FindAnyObjectByType<PlayerController>().Damage(strength);
+            Death();
+        }
+
          if(!isAttacking && !isPhasing)
         {
             

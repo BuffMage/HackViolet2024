@@ -52,8 +52,9 @@ public class WindTurbine : TowerControl
         }
     }
 
-    public override void Attack() {
-        // add money to system
+    public override void Attack() 
+    {
+        
     }
 
     private IEnumerator AttackCycle() {

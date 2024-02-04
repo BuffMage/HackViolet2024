@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    protected int health {get; set;}
+    [SerializeField] protected int health {get; set;}
     public GameObject model;
 
-    protected float speed {get; set;}
+    [SerializeField] protected float speed {get; set;}
 
-    protected int strength {get; set;}
-    protected float attackSpeed {get; set;}
+    [SerializeField] protected int strength {get; set;}
+    [SerializeField] protected float attackSpeed {get; set;}
 
     private Vector3 moveDirection = Vector3.left;
 
@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
     protected bool isAttacking = false;
 
     private bool beingPushedBack = false;
+
+    private Collider target;
 
     public void Damage(int amount)
     {
@@ -90,6 +92,18 @@ public class Enemy : MonoBehaviour
             Move();
         }
         
+        //Kills the enemy, damages the player
+        if(transform.position.x <= 0)
+        {
+            FindAnyObjectByType<PlayerController>().Damage(strength);
+            Death();
+        }
+
+        if(target == null)
+        {
+            isAttacking = false;
+        }
+
     }
 
     //need a coroutine for attacking interval
@@ -107,7 +121,7 @@ public class Enemy : MonoBehaviour
         
     }
 
-    void Death()
+    public void Death()
     {
         Destroy(this.gameObject);
     }
@@ -118,7 +132,10 @@ public class Enemy : MonoBehaviour
         {
             isAttacking = true;
             Debug.Log("Found Tower");
+            target = collision.collider;
         }
+
+        
 
         Debug.Log("AHHHHHHHHH");
     }
