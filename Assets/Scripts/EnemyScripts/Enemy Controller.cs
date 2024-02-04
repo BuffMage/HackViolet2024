@@ -93,7 +93,7 @@ public class Enemy : MonoBehaviour
         }
         
         //Kills the enemy, damages the player
-        if(transform.position.x <= 0)
+        if(transform.position.x <= -10)
         {
             FindAnyObjectByType<PlayerController>().Damage(strength);
             Death();

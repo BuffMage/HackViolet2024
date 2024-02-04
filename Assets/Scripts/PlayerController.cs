@@ -45,6 +45,6 @@ public class PlayerController : MonoBehaviour
 
     public void DisplayText()
     {
-        healthDisplay.GetComponent<TextMeshProUGUI>().text = health.ToString();
+        healthDisplay.GetComponent<TextMeshProUGUI>().text = "Health: " + health.ToString();
     }
 }
