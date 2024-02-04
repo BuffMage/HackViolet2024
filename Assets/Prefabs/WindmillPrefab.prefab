@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 735544031656770241}
   - component: {fileID: 8919220066854902210}
   - component: {fileID: 8609391876988202759}
+  - component: {fileID: 1636794455241883177}
   m_Layer: 7
   m_Name: WindmillPrefab
   m_TagString: Untagged
@@ -70,6 +71,18 @@ MonoBehaviour:
   model: {fileID: 4157410733059792597}
   cooldown: 10
   push: 50
+--- !u!114 &1636794455241883177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106688953037320811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b011e1a6ff7ab428815c1176b4bc6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3851561577029428100
 PrefabInstance:
   m_ObjectHideFlags: 0

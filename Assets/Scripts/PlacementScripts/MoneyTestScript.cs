@@ -11,6 +11,7 @@ public class MoneyTestScript : MonoBehaviour
     void Start()
     {
         ItemPlacement.OnMoneyChanged += UpdateMoney;
+        UpdateMoney(ItemPlacement.Instance.totalMoney);
     }
 
     public void UpdateMoney(int newMoney)
