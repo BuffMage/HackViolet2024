@@ -14,6 +14,8 @@ public class WindTurbine : TowerControl
     void Start()
     {
         SetDamage(50);
+        SetSpeed(2);
+        SetCost(100);
     }
 
     // Update is called once per frame
@@ -55,7 +57,7 @@ public class WindTurbine : TowerControl
 
     public override void Attack() 
     {
-        FindObjectOfType<ItemPlacement>().ChangeMoney(50);
+        ItemPlacement.Instance.ChangeMoney(50);
     }
 
     private IEnumerator AttackCycle() 
