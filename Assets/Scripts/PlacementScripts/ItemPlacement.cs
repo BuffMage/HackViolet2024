@@ -71,6 +71,14 @@ public class ItemPlacement : MonoBehaviour
 
         buildingToPlace = (BuildingType)amt;
     }
+
+    public bool ChangeMoney(int amount)
+    {
+        if (-amount > totalMoney) return false;
+        totalMoney += amount;
+        OnMoneyChanged?.Invoke(totalMoney);
+        return true;
+    }
 }
 
 
