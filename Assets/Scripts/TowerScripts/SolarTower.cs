@@ -37,6 +37,10 @@ public class SolarTower : TowerControl
             seq.append(laserGroup.LeanAlpha(1f, .2f));
             seq.append(laserGroup.LeanAlpha(0f, .2f));
         }
+        else
+        {
+            Debug.Log("No Hit Solar");
+        }
     }
 
     private IEnumerator AttackCycle() {

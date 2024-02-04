@@ -226,7 +226,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9782fde9444a7249bbebc49872b1484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 100
+  damage: 5
   model: {fileID: 0}
+  health: 25
+  speed: 2
+  laserGroup: {fileID: 0}
 --- !u!65 &8404143014732056506
 BoxCollider:
   m_ObjectHideFlags: 0

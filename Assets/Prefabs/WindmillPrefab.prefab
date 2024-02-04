@@ -70,7 +70,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b387cec02c69f4cba06f1d8e332c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 100
+  damage: 0
   model: {fileID: 4157410733059792597}
+  health: 50
+  speed: 10
   cooldown: 10
   push: 50
 --- !u!114 &1636794455241883177

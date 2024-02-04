@@ -40,7 +40,8 @@ public class WaveGenerator : MonoBehaviour
         int enemy = Random.Range(0, 3);
         int spawnLocation = Random.Range(0, 9);
 
-        Instantiate(Guys[enemy], new Vector3(spawnX,0.25f,spawnLocation-1), Guys[enemy].transform.rotation);
+        GameObject obj = Instantiate(Guys[enemy], new Vector3(spawnX,0.25f,spawnLocation-1), Guys[enemy].transform.rotation);
+        obj.GetComponent<BoxCollider>().transform.position = new Vector3(0, 0.6f, 0);
 
     }
 }

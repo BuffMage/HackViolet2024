@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class SmogEnemy : Enemy
@@ -13,11 +12,6 @@ public class SmogEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        health = 500;
-        speed = 0.5f;
-        attackSpeed = 1f;
-        strength = 3;
-
         currentColliders = new List<Collider>();
     }
 

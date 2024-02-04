@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 
 public class WindTurbine : TowerControl
@@ -10,12 +7,16 @@ public class WindTurbine : TowerControl
     private bool canCooldown = true;
     [SerializeField] private float push = 50;
 
+    
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         SetDamage(50);
-        SetSpeed(2);
+        SetSpeed(5);
         SetCost(100);
+
+        StartCoroutine(AttackCycle());
     }
 
     // Update is called once per frame

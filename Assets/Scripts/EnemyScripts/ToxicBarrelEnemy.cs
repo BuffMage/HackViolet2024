@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class ToxicBarrelEnemy : Enemy
@@ -15,10 +11,6 @@ public class ToxicBarrelEnemy : Enemy
     void Start()
     {
         debuffer = FindObjectOfType<DebuffManager>();
-        health = 150;
-        speed = 1f;
-        attackSpeed = 1f;
-        strength = 6;
     }
 
     // Update is called once per frame
@@ -44,7 +36,7 @@ public class ToxicBarrelEnemy : Enemy
         }
         else
         {
-            Debug.Log("No-Hit: Enemy");
+            Debug.Log("No-Hit: Enemy / Barrel");
         }
 
     }

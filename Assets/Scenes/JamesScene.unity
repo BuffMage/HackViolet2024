@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3802,6 +3802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2054107215}
   - component: {fileID: 2054107214}
+  - component: {fileID: 2054107216}
   m_Layer: 8
   m_Name: Level
   m_TagString: Untagged
@@ -3840,6 +3841,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2054107216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054107213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9a5afe363fc3d47a09cfb36f7ee78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDelay: 6
+  Guys:
+  - {fileID: 4155124880843650149, guid: e790628a5440d0f43aff274464e561e0, type: 3}
+  - {fileID: 2697354837996868721, guid: e12bdca267a72a442bc220e0b9bac038, type: 3}
+  - {fileID: 2028890772274641539, guid: 5baea98cbfd4ec6469acb43128f26d41, type: 3}
 --- !u!1 &2109621541
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TowerControl : MonoBehaviour
 {
-    [SerializeField] private int cost;
+    [SerializeField] protected int cost = 100;
     [SerializeField] private int damage;
     public GameObject model;
     private Rigidbody rb;

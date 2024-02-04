@@ -7,10 +7,7 @@ public class MicroPlasticsEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        health = 5;
-        speed = 2.5f;
-        attackSpeed = 1f;
-        strength = 1;
+       
     }
 
     // Update is called once per frame

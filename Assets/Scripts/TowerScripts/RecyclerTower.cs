@@ -17,6 +17,8 @@ public class RecyclerTower : TowerControl
         SetHealth(50);
         SetDamage(20);
         StartCoroutine(AttackCycle());
+
+        Enemies = new List<GameObject>();
     }
 
     // Update is called once per frame

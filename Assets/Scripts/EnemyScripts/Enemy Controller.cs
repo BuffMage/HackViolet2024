@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position + Vector3.right, Vector3.left, out hit, 10f, hitMask)) {
+        if (Physics.Raycast(transform.position, Vector3.left, out hit, 10f, hitMask)) {
             // Will do more stuff later
             Debug.Log("Did-Hit: Enemy");
 

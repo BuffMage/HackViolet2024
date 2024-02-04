@@ -36,6 +36,7 @@ public class ItemPlacement : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 int buildingCost = GetBuilding().GetComponent<TowerControl>().GetCost();
+                Debug.Log(buildingCost);
                 //int buildingCost = 0;
                 if (buildingCost <= totalMoney)
                 {
@@ -74,6 +75,7 @@ public class ItemPlacement : MonoBehaviour
 
     public bool ChangeMoney(int amount)
     {
+        Debug.Log("Money Changed");
         if (-amount > totalMoney) return false;
         totalMoney += amount;
         OnMoneyChanged?.Invoke(totalMoney);

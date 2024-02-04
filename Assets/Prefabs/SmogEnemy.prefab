@@ -4876,7 +4876,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ba596f9720cfe4e9680fd2a9095bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 20
   model: {fileID: 0}
+  speed: 1
+  strength: 5
+  attackSpeed: 2
 --- !u!54 &8546569399094883975
 Rigidbody:
   m_ObjectHideFlags: 0
