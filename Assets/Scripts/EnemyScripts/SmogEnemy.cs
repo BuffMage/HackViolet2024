@@ -7,14 +7,18 @@ using UnityEngine;
 public class SmogEnemy : Enemy
 {
 
+    private List<Collider> currentColliders;
+
     private bool isPhasing = false;
     // Start is called before the first frame update
     void Start()
     {
         health = 500;
-        speed = 1.5f;
+        speed = 0.5f;
         attackSpeed = 1f;
         strength = 3;
+
+        currentColliders = new List<Collider>();
     }
 
     // Update is called once per frame
@@ -34,11 +38,26 @@ public class SmogEnemy : Enemy
 
     void FixedUpdate()
     {
-      
+        isPhasing = false;
+        isAttacking = false;
+        currentColliders.RemoveAll(col => {
+            return col == null;
+        });
+        foreach(Collider col in currentColliders)
+        {
+            if (col.gameObject.layer == 7)
+            {
+                Debug.Log("Les goo");
+                isAttacking = true;
+                isPhasing = true;
+            }
+        }
+
          if(!isAttacking && !isPhasing)
         {
             
             Move();
+            return;
         }
         Phase();
         
@@ -47,20 +66,27 @@ public class SmogEnemy : Enemy
 
     void OnTriggerEnter(Collider collider)
     {
-        if(collider.gameObject.layer == 7)
+        currentColliders.Add(collider);
+/*         if(collider.gameObject.layer == 7)
         {
             Debug.Log("Les goo");
             isAttacking = true;
-        }
-        isPhasing = true;
+            isPhasing = true;
+        } */
+
 
     }
 
     void OnTriggerExit(Collider collider)
     {
-        isPhasing = false;
+        currentColliders.Remove(collider);
+/*         if(collider.gameObject.layer == 7)
+        {
+            isPhasing = false;
 
-        if(isAttacking) isAttacking = false;
+            if(isAttacking) isAttacking = false;
+        } */
     }
+    
 
 }

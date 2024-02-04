@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5078947226121846140}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SolarPanelPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,10 +105,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: e6da06c25ca1d184bbba42811c9c93b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: e6da06c25ca1d184bbba42811c9c93b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: e6da06c25ca1d184bbba42811c9c93b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: e6da06c25ca1d184bbba42811c9c93b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e6da06c25ca1d184bbba42811c9c93b9,
         type: 3}
       propertyPath: m_Name
       value: solarpanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e6da06c25ca1d184bbba42811c9c93b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: e6da06c25ca1d184bbba42811c9c93b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: e6da06c25ca1d184bbba42811c9c93b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: e6da06c25ca1d184bbba42811c9c93b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

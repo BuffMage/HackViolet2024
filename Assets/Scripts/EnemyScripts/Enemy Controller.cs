@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
 
     protected bool isAttacking = false;
 
+    private bool beingPushedBack = false;
+
     public void Damage(int amount)
     {
         health -= amount;
@@ -35,6 +37,23 @@ public class Enemy : MonoBehaviour
     public void Move()
     {
         this.transform.position += moveDirection * Time.deltaTime * speed;
+    }
+
+    public void PushBack(float duration)
+    {
+        if (beingPushedBack) return;
+        beingPushedBack = true;
+        StartCoroutine(PushBackRoutine(duration));
+    }
+
+    public IEnumerator PushBackRoutine(float duration)
+    {
+        Debug.Log("Pushed back");
+        float oldSpeed = speed;
+        speed = speed / 2;
+        yield return new WaitForSeconds(duration);
+        speed = oldSpeed;
+        beingPushedBack = false;
     }
 
     protected virtual void Attack()

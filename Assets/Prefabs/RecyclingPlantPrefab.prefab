@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847301969309142489}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RecyclingPlantPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,10 +110,75 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4842444322218019502, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2881525328989698067, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 184823494534102159, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 520207336190941035, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 81db08eb0d02cf641967aa897910de11,
         type: 3}
       propertyPath: m_Name
       value: recycling_center
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1972845285751216575, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3489497601361014436, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667858411759411741, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4409828996283873033, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903480817493416493, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6526117292131072038, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542148067383947293, guid: 81db08eb0d02cf641967aa897910de11,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
