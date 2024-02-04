@@ -57,7 +57,23 @@ public class ItemPlacement : MonoBehaviour
     {
         return buildings[(int)buildingToPlace];
     }
+
+    public void setBuilding(int amt)
+    {
+        if(amt > 3)
+        {
+            amt = 3;
+        }
+        else if(amt < 0)
+        {
+            amt = 0;
+        }
+
+        buildingToPlace = (BuildingType)amt;
+    }
 }
+
+
 
 public enum BuildingType
 {
