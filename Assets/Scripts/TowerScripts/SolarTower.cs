@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SolarTower : TowerControl
 {
+    public CanvasGroup laserGroup;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class SolarTower : TowerControl
     public override void Attack() {
         RaycastHit hit;
         int hitMask = 1 << 6;
+        Debug.DrawRay(transform.position, Vector3.right, Color.red, 5f);
         if (Physics.Raycast(transform.position, Vector3.right, out hit, Mathf.Infinity, hitMask)) {
             // Will do more stuff later
             Debug.Log("Did-Hit");
@@ -30,6 +33,9 @@ public class SolarTower : TowerControl
             Enemy enemy = target.GetComponent<Enemy>();
 
             enemy.Damage(GetDamage());
+            var seq = LeanTween.sequence();
+            seq.append(laserGroup.LeanAlpha(1f, .2f));
+            seq.append(laserGroup.LeanAlpha(0f, .2f));
         }
     }
 
