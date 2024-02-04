@@ -18,9 +18,9 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody rb;
 
-    private int hitMask = 1 << 7;
+    protected int hitMask = 1 << 7;
 
-    private bool isAttacking = false;
+    protected bool isAttacking = false;
 
     public void Damage(int amount)
     {
@@ -37,17 +37,21 @@ public class Enemy : MonoBehaviour
         this.transform.position += moveDirection * Time.deltaTime * speed;
     }
 
-    protected void Attack()
+    protected virtual void Attack()
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Vector3.left, out hit, 10f, hitMask)) {
+        if (Physics.Raycast(transform.position + Vector3.right, Vector3.left, out hit, 10f, hitMask)) {
             // Will do more stuff later
-            Debug.Log("Did-Hit");
+            Debug.Log("Did-Hit: Enemy");
 
 
             hit.transform.gameObject.GetComponent<TowerControl>().Damage(strength);
 
+        }
+        else
+        {
+            Debug.Log("No-Hit: Enemy");
         }
     }
 
@@ -55,7 +59,7 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         StartCoroutine("attackCycle");
-        
+        Debug.Log("YEssir");
         rb = GetComponent<Rigidbody>();
     }
 
@@ -72,14 +76,15 @@ public class Enemy : MonoBehaviour
     //need a coroutine for attacking interval
     private IEnumerator attackCycle()
     {
-        while(isAttacking)
+        while(true)
         {
-            Attack();
-            yield return new WaitForSeconds(attackSpeed);
+            if(isAttacking)
+            {
+                Attack();
+                yield return new WaitForSeconds(attackSpeed);
+            }
+            yield return new WaitForSeconds(0.1f);
         }
-
-        //Unneccesary??
-        yield return 0;
         
     }
 
@@ -93,6 +98,7 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.layer == 7)
         {
             isAttacking = true;
+            Debug.Log("Found Tower");
         }
 
         Debug.Log("AHHHHHHHHH");
@@ -105,3 +111,5 @@ public class Enemy : MonoBehaviour
    
 
 }
+
+
