@@ -15,9 +15,6 @@ public class ScrubberTower : TowerControl
     // Start is called before the first frame update
     void Start()
     {
-        SetSpeed(3);
-        SetDamage(12);
-        SetHealth(20);
         StartCoroutine(AttackCycle());
 
         smogs = new List<SmogEnemy>();

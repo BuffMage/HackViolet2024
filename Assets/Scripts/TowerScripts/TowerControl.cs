@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class TowerControl : MonoBehaviour
 {
-    private int cost;
-    private int damage;
+    [SerializeField] private int cost;
+    [SerializeField] private int damage;
     public GameObject model;
     private Rigidbody rb;
-    private int health;
-    private float speed;
+    [SerializeField] private int health;
+    [SerializeField] private float speed;
 
     // Start is called before the first frame update
     void Start()

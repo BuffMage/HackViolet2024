@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 297987737}
   - component: {fileID: 297987736}
   m_Layer: 7
-  m_Name: Cube (1)
+  m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,7 +330,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05947f0aef889241b8590492e95e4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cost: 0
+  damage: 5
   model: {fileID: 0}
+  health: 100
+  speed: 5
 --- !u!33 &297987739
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -369,7 +373,7 @@ GameObject:
   - component: {fileID: 1054573262}
   - component: {fileID: 1054573261}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,7 +504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d7b4329b0163841bf6f621c83710c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 150
   model: {fileID: 0}
+  speed: 5
+  strength: 10
+  attackSpeed: 3
   debuffTime: 1.5
 --- !u!1 &1119939841
 GameObject:

@@ -6,13 +6,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected int health {get; set;}
+    [SerializeField] protected int health;
     public GameObject model;
 
-    [SerializeField] protected float speed {get; set;}
+    [SerializeField] protected float speed;
 
-    [SerializeField] protected int strength {get; set;}
-    [SerializeField] protected float attackSpeed {get; set;}
+    [SerializeField] protected int strength;
+    [SerializeField] protected float attackSpeed;
 
     private Vector3 moveDirection = Vector3.left;
 
