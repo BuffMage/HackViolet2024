@@ -13,6 +13,17 @@ public class ItemPlacement : MonoBehaviour
     public int totalMoney = 300;
     public static event Action<int> OnMoneyChanged;
 
+/*     public GameObject windGood;
+    public GameObject windBad;
+    public GameObject solarGood;
+    public GameObject solarBad;
+    public GameObject scrubGood;
+    public GameObject scrubBad;
+    public GameObject recGood;
+    public GameObject recBad;
+ */
+    public GameObject[] placers;
+
     private void Awake() {
         if (Instance != null)
         {
@@ -36,7 +47,7 @@ public class ItemPlacement : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 int buildingCost = GetBuilding().GetComponent<TowerControl>().GetCost();
-                Debug.Log(buildingCost);
+                //Debug.Log(buildingCost);
                 //int buildingCost = 0;
                 if (buildingCost <= totalMoney)
                 {
@@ -50,6 +61,29 @@ public class ItemPlacement : MonoBehaviour
             else if (Input.GetMouseButtonDown(1))
             {
                 hit.collider.GetComponent<BuildingTile>().RemoveBuilding();
+            }
+        }
+
+        int cost = GetBuilding().GetComponent<TowerControl>().GetCost();
+        for (int i = 0; i < buildings.Length; i++)
+        {
+            if (i == (int)buildingToPlace)
+            {
+                if (cost <= totalMoney)
+                {
+                    placers[i * 2].SetActive(true);
+                    placers[i * 2 + 1].SetActive(false);
+                }
+                else
+                {
+                    placers[i * 2].SetActive(false);
+                    placers[i * 2 + 1].SetActive(true);
+                }
+            }
+            else
+            {
+                placers[i * 2].SetActive(false);
+                placers[i * 2 + 1].SetActive(false);
             }
         }
     }
@@ -75,7 +109,7 @@ public class ItemPlacement : MonoBehaviour
 
     public bool ChangeMoney(int amount)
     {
-        Debug.Log("Money Changed");
+        //Debug.Log("Money Changed");
         if (-amount > totalMoney) return false;
         totalMoney += amount;
         OnMoneyChanged?.Invoke(totalMoney);

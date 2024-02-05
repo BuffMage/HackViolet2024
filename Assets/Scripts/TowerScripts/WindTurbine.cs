@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WindTurbine : TowerControl
 {
-    [SerializeField] private int cooldown = 10;
+    [SerializeField] private int cooldown = 5;
     private bool canCooldown = true;
     [SerializeField] private float push = 50;
 
@@ -13,9 +13,12 @@ public class WindTurbine : TowerControl
     void Awake()
     {
         SetDamage(50);
-        SetSpeed(5);
+        SetSpeed(10);
         SetCost(100);
+    }
 
+    void Start()
+    {
         StartCoroutine(AttackCycle());
     }
 
@@ -33,6 +36,7 @@ public class WindTurbine : TowerControl
         hits = Physics.RaycastAll(transform.position, transform.right, 100.0F, 1 << 6);
         Debug.DrawRay(transform.position, transform.right, Color.red, 3f);
         canCooldown = false;
+        StartCoroutine(Cooldown());
 
         for (int i = 0; i < hits.Length; i++) {
             RaycastHit hit = hits[i];
@@ -43,7 +47,7 @@ public class WindTurbine : TowerControl
             Transform t = enemy.GetComponent<Transform>();
             Rigidbody rb = enemy.GetComponent<Rigidbody>();
             enemy.PushBack(3f);
-            Debug.Log("Really tryin here :(");
+            //Debug.Log("Really tryin here :(");
 
             // rb.AddForce(Vector3.right * push);
             // t.position = Vector3.Lerp(t.position, t.position + Vector3.right * push, Time.time/20);
@@ -58,14 +62,14 @@ public class WindTurbine : TowerControl
 
     public override void Attack() 
     {
-        ItemPlacement.Instance.ChangeMoney(50);
+        ItemPlacement.Instance.ChangeMoney(25);
     }
 
     private IEnumerator AttackCycle() 
     {
         while (true) {
-            Attack();
             yield return new WaitForSeconds(GetSpeed());
+            Attack();
         }
     }
 

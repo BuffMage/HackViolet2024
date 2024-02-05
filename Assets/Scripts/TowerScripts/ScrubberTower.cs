@@ -33,7 +33,7 @@ public class ScrubberTower : TowerControl
 
     public override void Attack()
     {
-        Debug.Log("Attacking");
+        //Debug.Log("Attacking");
         RaycastHit[] hits;
         int hitMask = 1 << 6;
         hits = Physics.RaycastAll(transform.position + Vector3.left, transform.right, 2.0f, hitMask);
@@ -50,7 +50,7 @@ public class ScrubberTower : TowerControl
 
             if(enemy != null)
             {
-                Debug.Log("Hit something??");
+                //Debug.Log("Hit something??");
                 enemy.Damage(GetDamage());
             }
         }
@@ -75,7 +75,7 @@ public class ScrubberTower : TowerControl
     
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collided with a thing!");
+        //Debug.Log("Collided with a thing!");
         if(collision.gameObject.GetComponent<SmogEnemy>() != null)
         {
             smogs.Add(collision.gameObject.GetComponent<SmogEnemy>());

@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.layer == 7)
         {
             isAttacking = true;
-            Debug.Log("Found Tower");
+            //Debug.Log("Found Tower");
             target = collision.collider;
         }
     }

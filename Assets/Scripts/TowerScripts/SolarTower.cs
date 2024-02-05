@@ -27,7 +27,7 @@ public class SolarTower : TowerControl
         Debug.DrawRay(transform.position, Vector3.right, Color.red, 5f);
         if (Physics.Raycast(transform.position, Vector3.right, out hit, Mathf.Infinity, hitMask)) {
             // Will do more stuff later
-            Debug.Log("Did-Hit");
+            //Debug.Log("Did-Hit");
             GameObject target = hit.transform.gameObject;
 
             Enemy enemy = target.GetComponent<Enemy>();
@@ -39,7 +39,7 @@ public class SolarTower : TowerControl
         }
         else
         {
-            Debug.Log("No Hit Solar");
+            //Debug.Log("No Hit Solar");
         }
     }
 

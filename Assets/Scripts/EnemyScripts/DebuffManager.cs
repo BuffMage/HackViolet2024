@@ -25,20 +25,20 @@ public class DebuffManager : MonoBehaviour
     //for whatever reason
     public void ApplyDebuff(GameObject Target, float time)
     {
-        Debug.Log("DEBUFF APPLIED");
+        //Debug.Log("DEBUFF APPLIED");
         if(Target.GetComponent<TowerControl>() != null)
         {
-            Debug.Log("APPLY TO TOWER");
+            //Debug.Log("APPLY TO TOWER");
             TowerControl te = Target.GetComponent<TowerControl>();
             if(affectedTowers.ContainsKey(te))
             {
-                Debug.Log("Resetting Debuff");
+                //Debug.Log("Resetting Debuff");
                 
                 affectedTowers[te] = time;
             }
             else
             {
-                Debug.Log("Adding Tower to Thing!");
+                //Debug.Log("Adding Tower to Thing!");
                 affectedTowers.Add(te, time);
                 StartDebuff(te);
             }
@@ -87,7 +87,7 @@ public class DebuffManager : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(1f);
-            Debug.Log("Debuffing");
+            //Debug.Log("Debuffing");
         }
     }
 

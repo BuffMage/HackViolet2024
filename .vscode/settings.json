@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "HackViolet2024.sln"
+    "dotnet.defaultSolution": "HackVioletGame.sln"
 }

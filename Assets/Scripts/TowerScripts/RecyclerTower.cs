@@ -7,6 +7,8 @@ public class RecyclerTower : TowerControl
 {
     private bool isAttacking = false;
     private List <GameObject> Enemies;
+    public Animator animator;
+    public ParticleSystem shredParticles;
 
 
 
@@ -34,7 +36,7 @@ public class RecyclerTower : TowerControl
         if(collision.gameObject.layer == 6)
         {
             isAttacking = true;
-            Debug.Log("Lets goooo");
+            //Debug.Log("Lets goooo");
             Enemies.Add(collision.gameObject);
         }
     }
@@ -53,7 +55,7 @@ public class RecyclerTower : TowerControl
 
     public override void Attack()
     {
-        
+        Enemies.RemoveAll(enemy => enemy == null);
         for(int i = 0; i < Enemies.Count; i++)
         {
             GameObject obj = Enemies[i];
@@ -67,6 +69,8 @@ public class RecyclerTower : TowerControl
             {
                 enemy.Damage(GetDamage());
             }
+            animator.Play("Shred");
+            shredParticles.Play();
         }
 
     }

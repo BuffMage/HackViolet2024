@@ -41,7 +41,7 @@ public class SmogEnemy : Enemy
         {
             if (col.gameObject.layer == 7)
             {
-                Debug.Log("Les goo");
+                //Debug.Log("Les goo");
                 isAttacking = true;
                 isPhasing = true;
             }
