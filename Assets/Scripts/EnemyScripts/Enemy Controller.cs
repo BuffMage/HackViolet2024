@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Pushed back");
         float oldSpeed = speed;
-        speed = speed / 2;
+        speed = -speed / 2;
         yield return new WaitForSeconds(duration);
         speed = oldSpeed;
         beingPushedBack = false;

@@ -7,7 +7,7 @@ public class WindTurbine : TowerControl
     private bool canCooldown = true;
     [SerializeField] private float push = 50;
 
-    
+    public ParticleSystem pushBackEffect;
 
     // Start is called before the first frame update
     void Awake()
@@ -32,6 +32,8 @@ public class WindTurbine : TowerControl
 
     public void PushEnemyBack() 
     {
+        pushBackEffect.Play();
+        Invoke(nameof(StopParticles), 3f);
         RaycastHit[] hits;
         hits = Physics.RaycastAll(transform.position, transform.right, 100.0F, 1 << 6);
         Debug.DrawRay(transform.position, transform.right, Color.red, 3f);
@@ -58,6 +60,11 @@ public class WindTurbine : TowerControl
                 smog.Damage(GetDamage());
             }
         }
+    }
+
+    public void StopParticles()
+    {
+        pushBackEffect.Stop();
     }
 
     public override void Attack() 
